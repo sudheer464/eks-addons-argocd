@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-dashboard-external
+  namespace: kubernetes-dashboard
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+    service.beta.kubernetes.io/aws-load-balancer-name: ae740d194e83c479cbf9b1ecb8c9905e
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: kubernetes-dashboard
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: 8443

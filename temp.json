@@ -1,0 +1,60 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "creationTimestamp": "2023-10-11T15:12:57Z",
+        "deletionTimestamp": "2023-10-12T14:16:11Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "argocd",
+            "name": "argocd"
+        },
+        "name": "argocd",
+        "resourceVersion": "486713",
+        "uid": "1a1fbba5-cfee-4665-9349-112984eeb541"
+    },
+    "spec": {
+        "finalizers": [
+            "kubernetes"
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2023-10-12T14:16:18Z",
+                "message": "All resources successfully discovered",
+                "reason": "ResourcesDiscovered",
+                "status": "False",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2023-10-12T14:16:18Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2023-10-12T14:16:18Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2023-10-12T14:16:18Z",
+                "message": "Some resources are remaining: applications.argoproj.io has 2 resource instances",
+                "reason": "SomeResourcesRemain",
+                "status": "True",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2023-10-12T14:16:18Z",
+                "message": "Some content in the namespace has finalizers remaining: resources-finalizer.argocd.argoproj.io in 2 resource instances",
+                "reason": "SomeFinalizersRemain",
+                "status": "True",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
